@@ -9,7 +9,7 @@ let cardImage = document.querySelector('.card-image');
 let img = document.querySelector('img');
 let cardText = document.querySelector('.card-text');
 let h3 = document.querySelector('h3');
-let p = document.querySelector('p');
+let p = document.querySelector('.card-text p');
 
 let personale = [
     {
@@ -45,15 +45,24 @@ let personale = [
 ]
 
 
- let immagini;
+ 
  for(let i=0; i<personale.length; i++){
-    console.log(personale[1].Foto)
-    img.innerHTML = `<img>${personale[i].Foto}</img>`;
-    h3.innerHTML = `<h3>${personale[i].Nome}</h3>`;
-    p.innerHTML = `<p>${personale[i].Ruolo}</p>`;
-    console.log(img);
-    console.log(h3)
-    console.log(p);
+
+        teamContainer += `
+           <div class="team-card">
+              <div class="card-image">
+                <img
+                 ${personale[i].Foto}
+                />
+              </div>
+              <div class="card-text">
+                <h3> ${personale[i].Nome}</h3>
+                 <p> ${personale[i].Ruolo}</p>
+              </div>
+            </div>
+        `
+     console.log(teamContainer)   
+     
  }
  
- 
+

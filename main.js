@@ -3,13 +3,11 @@
 // Una volta definita la struttura dati, prendendo come riferimento la card di esempio presente nell'html, stampare dinamicamente una card per ogni membro del team.
 // BONUS:
 // Utilizzare gli input presenti nella pagina per permettere all'utente di aggiungere nuovi membri del team: cliccando sul pulsante "add" viene creato un nuovo oggetto, il quale viene inserito nell'array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall'utente.
+
+
+
+
 let teamContainer = document.querySelector('.team-container')
-let teamCard = document.querySelector('.team-card');
-let cardImage = document.querySelector('.card-image');
-let img = document.querySelector('img');
-let cardText = document.querySelector('.card-text');
-let h3 = document.querySelector('h3');
-let p = document.querySelector('.card-text p');
 
 let personale = [
     {
@@ -44,25 +42,25 @@ let personale = [
     }
 ]
 
-
+let teamCard = '';
  
- for(let i=0; i<personale.length; i++){
+for(let i=0; i<personale.length; i++){
 
-        teamContainer += `
-           <div class="team-card">
-              <div class="card-image">
-                <img
-                 ${personale[i].Foto}
-                />
-              </div>
-              <div class="card-text">
-                <h3> ${personale[i].Nome}</h3>
-                 <p> ${personale[i].Ruolo}</p>
-              </div>
+    teamCard += `
+        <div class="team-card">
+            <div class="card-image">
+            <img
+                src=${personale[i].Foto}
+            />
             </div>
-        `
-     console.log(teamContainer)   
-     
- }
- 
-
+            <div class="card-text">
+            <h3> ${personale[i].Nome}</h3>
+                <p> ${personale[i].Ruolo}</p>
+            </div>
+        </div>
+    `;
+    //console.log(teamContainer)   
+   
+}
+teamContainer.innerHTML += teamCard  
+console.log(teamCard);
